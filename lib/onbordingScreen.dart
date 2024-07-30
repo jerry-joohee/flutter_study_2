@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class onbordingScreen extends StatefulWidget {
   const onbordingScreen({super.key});
 
@@ -8,6 +10,6 @@ class onbordingScreen extends StatefulWidget {
 class _onbordingScreenState extends State<onbordingScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return AppBar();
   }
 }
