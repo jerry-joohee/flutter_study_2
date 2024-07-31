@@ -8,6 +8,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class LoginScreenState extends State<LoginScreen> {
+  bool visible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,54 +60,76 @@ class LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: 50),
-                    Container(
-                      width: double.infinity,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: Color(0xFF161C2A),
+                    TextField(
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
                       ),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 16),
-                          child: Text(
-                            'text@naver.com',
-                            style: TextStyle(
-                              color: Color(0xFF8894AF),
-                              fontSize: 16,
-                            ),
-                          ),
+                      decoration: InputDecoration(
+                        hintText: 'text@naver.com',
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          color: Color(0xFF8894AF),
+                        ),
+                        filled: true, //
+                        fillColor: Color(0xFF161C2A),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                        counterText: '',
+                        counterStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
                         ),
                       ),
+                      minLines: 1,
+                      maxLength: 50,
                     ),
                     SizedBox(height: 16),
-                    Container(
-                      width: double.infinity,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: Color(0xFF161C2A),
+                    TextField(
+                      obscureText: !visible, //입력 필드의 텍스트를 숨길지 여부를 결정하는 속성
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
                       ),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 16, right: 16),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                '********',
-                                style: TextStyle(
-                                  color: Color(0xFF8894AF),
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Image.asset('assets/eye.png'),
-                            ],
+                      decoration: InputDecoration(
+                        hintText: '********',
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          color: Color(0xFF8894AF),
+                        ),
+                        filled: true,
+                        fillColor: Color(0xFF161C2A),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                        counterText: '',
+                        counterStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              visible = !visible;
+                            });
+                          },
+                          icon: Image.asset(
+                            visible ? 'assets/eye-slash.png' : 'assets/eye.png',
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),
+                      minLines: 1,
+                      maxLength: 10,
                     ),
                     SizedBox(height: 10),
                     Row(
@@ -133,7 +157,7 @@ class LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20), // 버튼과의 간격을 조절합니다.
+                    SizedBox(height: 20), //
                   ],
                 ),
               ),

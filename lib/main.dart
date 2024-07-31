@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_2/loginScreen.dart';
 import 'package:flutter_study_2/onbordingScreen.dart';
+import 'package:flutter_study_2/signupScreen.dart';
 
 void main() {
   runApp(const MyApp());
