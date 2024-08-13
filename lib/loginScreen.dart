@@ -66,7 +66,7 @@ class LoginScreenState extends State<LoginScreen> {
                         fontSize: 16,
                       ),
                       decoration: InputDecoration(
-                        hintText: 'text@naver.com',
+                        hintText: 'email@gmail.com',
                         hintStyle: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
@@ -85,6 +85,7 @@ class LoginScreenState extends State<LoginScreen> {
                           color: Colors.white,
                         ),
                       ),
+                      cursorColor: Colors.white,
                       minLines: 1,
                       maxLength: 50,
                     ),
@@ -128,6 +129,7 @@ class LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
+                      cursorColor: Colors.white,
                       minLines: 1,
                       maxLength: 10,
                     ),
@@ -157,7 +159,7 @@ class LoginScreenState extends State<LoginScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20), //
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
