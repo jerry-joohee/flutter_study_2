@@ -15,34 +15,50 @@ class LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF15161E),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF15161E),
+        title: Text(
+          'Login',
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          color: Colors.white,
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            size: 22,
+          ),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/arrow-left.png',
-                        ),
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Image.asset(
+                    //       'assets/arrow-left.png',
+                    //     ),
+                    //     Expanded(
+                    //       child: Align(
+                    //         alignment: Alignment.center,
+                    //         child: Text(
+                    //           'Login',
+                    //           style: TextStyle(
+                    //             color: Colors.white,
+                    //             fontSize: 16,
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                     SizedBox(height: 80),
                     Center(
                       child: Image.asset(

@@ -15,35 +15,32 @@ class SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF15161E),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF15161E),
+        title: Text(
+          'Join',
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          color: Colors.white,
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            size: 22,
+          ),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/arrow-left.png',
-                        ),
-                        Expanded(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Join',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                     SizedBox(height: 94),
                     Text(
                       '효율적인 자산관리\n가계부앱에서',
@@ -76,7 +73,7 @@ class SignupScreenState extends State<SignupScreen> {
                           fontSize: 16,
                           color: Color(0xFF8894AF),
                         ),
-                        filled: true, //
+                        filled: true,
                         fillColor: Color(0xFF161C2A),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -103,7 +100,7 @@ class SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 8),
                     TextField(
-                      obscureText: !visible, //입력 필드의 텍스트를 숨길지 여부를 결정하는 속성
+                      obscureText: !visible,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -153,11 +150,9 @@ class SignupScreenState extends State<SignupScreen> {
                           fontSize: 16,
                           letterSpacing: -0.3),
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
+                    SizedBox(height: 8),
                     TextField(
-                      obscureText: !visible, //입력 필드의 텍스트를 숨길지 여부를 결정하는 속성
+                      obscureText: !visible,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -210,7 +205,7 @@ class SignupScreenState extends State<SignupScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginScreen(), //페이지 이동
+                        builder: (context) => LoginScreen(),
                       ),
                     );
                   },
@@ -228,9 +223,7 @@ class SignupScreenState extends State<SignupScreen> {
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
           ],
         ),
       ),
