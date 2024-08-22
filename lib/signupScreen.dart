@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'loginScreen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -202,22 +203,29 @@ class SignupScreenState extends State<SignupScreen> {
                 ),
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color(0xFF1071CB),
-              ),
-              child: Center(
-                child: Text(
-                  '회원가입',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
+            ElevatedButton(
+              onPressed: () {
+                setState(
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(), //페이지 이동
+                      ),
+                    );
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.fromHeight(52),
+                backgroundColor: Color(0xFF1071CB),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
+              ),
+              child: Text(
+                '회원가입',
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
             SizedBox(

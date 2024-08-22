@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'signupScreen.dart';
+import 'loginScreen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -37,44 +39,58 @@ class OnboardingScreenState extends State<OnboardingScreen> {
             Image.asset(
               'assets/onbordingScreen_img.png',
             ),
-            Spacer(), // Spacer 위젯을 추가하여 남은 공간을 차지하도록 합니다.
-            Container(
-              width: double.infinity,
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color(0xFF1071CB),
-              ),
-              child: Center(
-                child: Text(
-                  '회원가입',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
+            Spacer(), //Spacer 위젯을 추가하여 남은 공간을 차지하도록 합니다.
+            ElevatedButton(
+              onPressed: () {
+                setState(
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignupScreen(), //페이지 이동
+                      ),
+                    );
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.fromHeight(52),
+                backgroundColor: Color(0xFF1071CB),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
+              ),
+              child: Text(
+                '회원가입',
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
             SizedBox(
               height: 16,
             ),
-            Container(
-              width: double.infinity,
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color(0xFFBEBEBE),
-              ),
-              child: Center(
-                child: Text(
-                  '로그인',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF707070),
-                    fontSize: 18,
-                  ),
+            ElevatedButton(
+              onPressed: () {
+                setState(
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginScreen(), //페이지 이동
+                      ),
+                    );
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.fromHeight(52),
+                backgroundColor: Color(0xFFBEBEBE),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
+              ),
+              child: Text(
+                '로그인',
+                style: TextStyle(color: Color(0xFF707070), fontSize: 18),
               ),
             ),
             SizedBox(
