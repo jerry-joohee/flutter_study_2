@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'verificationScreen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends ConsumerState<LoginScreen> {
   bool visible = false;
 
   @override
@@ -40,25 +42,6 @@ class LoginScreenState extends State<LoginScreen> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    // Row(
-                    //   children: [
-                    //     Image.asset(
-                    //       'assets/arrow-left.png',
-                    //     ),
-                    //     Expanded(
-                    //       child: Align(
-                    //         alignment: Alignment.center,
-                    //         child: Text(
-                    //           'Login',
-                    //           style: TextStyle(
-                    //             color: Colors.white,
-                    //             fontSize: 16,
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                     SizedBox(height: 80),
                     Center(
                       child: Image.asset(
@@ -183,16 +166,22 @@ class LoginScreenState extends State<LoginScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => VerificationScreen(), //페이지 이동
-                      ),
-                    );
-                  },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VerificationScreen(), //페이지 이동
+                  ),
                 );
+                // setState(
+                //   () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => VerificationScreen(), //페이지 이동
+                //       ),
+                //     );
+                //   },
+                // );
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: Size.fromHeight(52),
