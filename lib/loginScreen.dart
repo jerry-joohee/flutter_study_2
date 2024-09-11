@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'verificationScreen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'verificationScreen.dart';
+import 'package:flutter_study_2/riverpod/loginScreen_riverpod.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -15,6 +16,9 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final loginscreen = ref.watch(loginscreenProvider);
+    final loginscreenNotifier = ref.read(loginscreenProvider.notifier);
+
     return Scaffold(
       backgroundColor: Color(0xFF15161E),
       appBar: AppBar(
@@ -172,16 +176,6 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     builder: (context) => VerificationScreen(), //페이지 이동
                   ),
                 );
-                // setState(
-                //   () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => VerificationScreen(), //페이지 이동
-                //       ),
-                //     );
-                //   },
-                // );
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: Size.fromHeight(52),
