@@ -9,7 +9,8 @@ class SignupScreen extends StatefulWidget {
 }
 
 class SignupScreenState extends State<SignupScreen> {
-  bool visible = false;
+  bool passwordVisible = false;
+  bool checkVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +101,7 @@ class SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 8),
                     TextField(
-                      obscureText: !visible,
+                      obscureText: !passwordVisible,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -127,11 +128,13 @@ class SignupScreenState extends State<SignupScreen> {
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
-                              visible = !visible;
+                              passwordVisible = !passwordVisible;
                             });
                           },
                           icon: Image.asset(
-                            visible ? 'assets/eye-slash.png' : 'assets/eye.png',
+                            passwordVisible
+                                ? 'assets/eye-slash.png'
+                                : 'assets/eye.png',
                             width: 20,
                             height: 20,
                             fit: BoxFit.contain,
@@ -152,7 +155,7 @@ class SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 8),
                     TextField(
-                      obscureText: !visible,
+                      obscureText: !checkVisible,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -179,11 +182,13 @@ class SignupScreenState extends State<SignupScreen> {
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
-                              visible = !visible;
+                              checkVisible = !checkVisible;
                             });
                           },
                           icon: Image.asset(
-                            visible ? 'assets/eye-slash.png' : 'assets/eye.png',
+                            checkVisible
+                                ? 'assets/eye-slash.png'
+                                : 'assets/eye.png',
                             width: 20,
                             height: 20,
                             fit: BoxFit.contain,
