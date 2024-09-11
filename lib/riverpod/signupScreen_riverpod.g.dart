@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'signupScreen.dart';
+part of 'signupScreen_riverpod.dart';
 
 // **************************************************************************
 // RiverpodGenerator

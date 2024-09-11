@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'signupScreen.dart';
 import 'loginScreen.dart';
+import 'package:flutter_study_2/riverpod/onbordingScreen_riverpod.dart';
 
-class OnboardingScreen extends StatefulWidget {
+class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => OnboardingScreenState();
+  OnboardingScreenState createState() => OnboardingScreenState();
 }
 
-class OnboardingScreenState extends State<OnboardingScreen> {
+class OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

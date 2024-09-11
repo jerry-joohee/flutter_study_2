@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'loginScreen.dart';
-import 'package:flutter_study_2/riverpod/signupScreen.dart';
+import 'package:flutter_study_2/riverpod/signupScreen_riverpod.dart';
 
-class SignupScreen extends StatefulWidget {
+class SignupScreen extends ConsumerStatefulWidget {
   const SignupScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => SignupScreenState();
+  SignupScreenState createState() => SignupScreenState();
 }
 
-class SignupScreenState extends State<SignupScreen> {
+class SignupScreenState extends ConsumerState<SignupScreen> {
   bool passwordVisible = false;
   bool checkVisible = false;
 
@@ -208,15 +208,11 @@ class SignupScreenState extends State<SignupScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
-                      ),
-                    );
-                  },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
                 );
               },
               style: ElevatedButton.styleFrom(
