@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'loginScreen.dart';
-import 'package:flutter_study_2/riverpod/signupScreen_riverpod.dart';
+import 'package:flutter_study_2/provider/signupScreen_riverpod.dart';
 
 class SignupScreen extends ConsumerStatefulWidget {
   const SignupScreen({super.key});
@@ -12,6 +12,9 @@ class SignupScreen extends ConsumerStatefulWidget {
 }
 
 class SignupScreenState extends ConsumerState<SignupScreen> {
+  String inputEmail = "";
+  String inputPassword = "";
+
   bool passwordVisible = false;
   bool checkVisible = false;
 
@@ -66,6 +69,9 @@ class SignupScreenState extends ConsumerState<SignupScreen> {
                     ),
                     SizedBox(height: 8),
                     TextField(
+                      onChanged: (value) {
+                        inputPassword = value;
+                      },
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -104,6 +110,9 @@ class SignupScreenState extends ConsumerState<SignupScreen> {
                     ),
                     SizedBox(height: 8),
                     TextField(
+                      onChanged: (value) {
+                        inputPassword = value;
+                      },
                       obscureText: !passwordVisible,
                       style: TextStyle(
                         color: Colors.white,
@@ -158,6 +167,9 @@ class SignupScreenState extends ConsumerState<SignupScreen> {
                     ),
                     SizedBox(height: 8),
                     TextField(
+                      onChanged: (value) {
+                        inputEmail = value;
+                      },
                       obscureText: !checkVisible,
                       style: TextStyle(
                         color: Colors.white,

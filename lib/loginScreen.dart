@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'verificationScreen.dart';
-import 'package:flutter_study_2/riverpod/loginScreen_riverpod.dart';
+import 'package:flutter_study_2/provider/loginScreen_riverpod.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -13,6 +13,9 @@ class LoginScreen extends ConsumerStatefulWidget {
 
 class LoginScreenState extends ConsumerState<LoginScreen> {
   bool visible = false;
+
+  String inputId = "";
+  String inputPassword = "";
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +68,9 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     SizedBox(height: 50),
                     TextField(
+                      onChanged: (value) {
+                        inputId = value;
+                      },
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
@@ -95,6 +101,9 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     SizedBox(height: 16),
                     TextField(
+                      onChanged: (value) {
+                        inputPassword = value;
+                      },
                       obscureText: !visible, //입력 필드의 텍스트를 숨길지 여부를 결정하는 속성
                       style: TextStyle(
                         color: Colors.white,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:flutter_study_2/riverpod/verificationScreen_riverpod.dart';
+import 'package:flutter_study_2/provider/verificationScreen_riverpod.dart';
 
 class VerificationScreen extends ConsumerStatefulWidget {
   const VerificationScreen({super.key});
@@ -10,7 +10,7 @@ class VerificationScreen extends ConsumerStatefulWidget {
   VerificationScreenState createState() => VerificationScreenState();
 }
 
-class VerificationScreen extends ConsumerState<VerificationScreen> {
+class VerificationScreenState extends ConsumerState<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'signupScreen.dart';
 import 'loginScreen.dart';
-import 'package:flutter_study_2/riverpod/onbordingScreen_riverpod.dart';
+import 'package:flutter_study_2/provider/onbordingScreen_riverpod.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
