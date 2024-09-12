@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'signupScreen.dart';
 import 'loginScreen.dart';
-import 'package:flutter_study_2/provider/onbordingScreen_riverpod.dart';
+import 'package:flutter_study_2/provider/provider.dart';
 
 class OnboardingScreen extends ConsumerStatefulWidget {
   const OnboardingScreen({super.key});
@@ -15,6 +15,8 @@ class OnboardingScreen extends ConsumerStatefulWidget {
 class OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
+    final onbordingScreen = ref.watch(providerProvider);
+    final onbordingScreenNotifier = ref.read(providerProvider.notifier);
     return Scaffold(
       backgroundColor: Color(0xFF15161E),
       body: Padding(

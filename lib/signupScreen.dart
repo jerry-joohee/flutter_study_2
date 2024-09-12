@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'loginScreen.dart';
-import 'package:flutter_study_2/provider/signupScreen_riverpod.dart';
+import 'package:flutter_study_2/provider/provider.dart';
 
 class SignupScreen extends ConsumerStatefulWidget {
   const SignupScreen({super.key});
@@ -20,6 +20,8 @@ class SignupScreenState extends ConsumerState<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final signupScreen = ref.watch(providerProvider);
+    final signupScreenNotifier = ref.read(providerProvider.notifier);
     return Scaffold(
       backgroundColor: Color(0xFF15161E),
       appBar: AppBar(
